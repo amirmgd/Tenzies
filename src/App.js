@@ -84,7 +84,7 @@ function App() {
 			<button className='roll' onClick={rollDice}>
 				{tenzies ? "New Game" : "Roll"}
 			</button>
-			{!tenzies && !record && (
+			{localStorage.getItem("record") !== null && (
 				<p className='instruction'>
 					the current record is{" "}
 					<bold className='current-record-num'>
