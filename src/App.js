@@ -75,7 +75,6 @@ function App() {
 	return (
 		<div className='main'>
 			{tenzies && <Confetti />}
-
 			<h1 className='title'>Tenzies</h1>
 			<p className='instruction'>
 				Roll until all dice are the same. Click each die to freeze it at its
@@ -85,7 +84,15 @@ function App() {
 			<button className='roll' onClick={rollDice}>
 				{tenzies ? "New Game" : "Roll"}
 			</button>
-
+			{!tenzies && !record && (
+				<p className='instruction'>
+					the current record is{" "}
+					<bold className='current-record-num'>
+						{localStorage.getItem("record")}
+					</bold>
+					, try improve it.
+				</p>
+			)}
 			{tenzies && !record && (
 				<h3 className='records'>
 					Congragulations, you finished the game after {count} rolls
