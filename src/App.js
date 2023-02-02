@@ -84,15 +84,20 @@ function App() {
 			<button className='roll' onClick={rollDice}>
 				{tenzies ? "New Game" : "Roll"}
 			</button>
-			{localStorage.getItem("record") !== null && (
-				<p className='instruction'>
-					the current record is{" "}
-					<bold className='current-record-num'>
-						{localStorage.getItem("record")}
-					</bold>
-					, try improve it.
-				</p>
-			)}
+			{!tenzies &&
+				(localStorage.getItem("record") === null ? (
+					<p className='instruction'>
+						You're playing the game for the first time, Have fun.
+					</p>
+				) : (
+					<p className='instruction'>
+						the current record is {""}
+						<p className='current-record-num'>
+							{localStorage.getItem("record")}
+						</p>
+						, try improve it.
+					</p>
+				))}
 			{tenzies && !record && (
 				<h3 className='records'>
 					Congragulations, you finished the game after {count} rolls
@@ -101,7 +106,7 @@ function App() {
 			{tenzies && record && (
 				<p className='records'>
 					Congragulations, you broke the record by finishing the game after{" "}
-					<bold className='record-num'>{count}</bold> rolls
+					<p className='record-num'>{count}</p> rolls
 				</p>
 			)}
 		</div>
