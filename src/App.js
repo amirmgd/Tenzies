@@ -22,7 +22,7 @@ function App() {
 				setRecord(true)
 			}
 		}
-	}, [dice])
+	}, [dice, count])
 
 	function dieGenerator() {
 		return {
