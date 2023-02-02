@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 it's a little game called Tenzies, where you have roll the dices until you get 10 of the same number.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
