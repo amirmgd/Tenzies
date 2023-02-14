@@ -2,6 +2,7 @@ import Die from "./Die"
 import { useState, useEffect } from "react"
 import { nanoid } from "nanoid"
 import Confetti from "react-confetti"
+import { Button, Typography, Container, Grid } from "@mui/material"
 
 function App() {
 	const [dice, setDice] = useState(allNewDice())
@@ -73,43 +74,73 @@ function App() {
 	))
 
 	return (
-		<div className='main'>
+		<Container
+			className='main'
+			sx={{
+				width: 500,
+				maxHeight: 800,
+				backgroundColor: "#f5f5f5",
+				display: "flex",
+				flexDirection: "column",
+				justifyContent: "space-around",
+				alignItems: "center",
+			}}>
 			{tenzies && <Confetti />}
-			<h1 className='title'>Tenzies</h1>
-			<p className='instruction'>
+			<Typography variant='h3'>Tenzies</Typography>
+			<Typography variant='body1'>
 				Roll until all dice are the same. Click each die to freeze it at its
 				current value between rolls.
-			</p>
-			<div className='dice-container'>{diceElement}</div>
-			<button className='roll' onClick={rollDice}>
+			</Typography>
+			<Grid sx={{ gap: "20px", m: 3 }} className='dice-container'>
+				{diceElement}
+			</Grid>
+			<Button
+				sx={{ boxShadow: 3, letterSpacing: 2 }}
+				variant='contained'
+				onClick={rollDice}>
 				{tenzies ? "New Game" : "Roll"}
-			</button>
+			</Button>
 			{!tenzies &&
 				(localStorage.getItem("record") === null ? (
-					<p className='instruction'>
+					<Typography variant='body1' sx={{ m: 1 }}>
 						You're playing the game for the first time, Have fun.
-					</p>
+					</Typography>
 				) : (
-					<p className='instruction'>
+					<Typography variant='body1' sx={{ m: 2 }}>
 						the current record is {""}
-						<p className='current-record-num'>
+						<Typography
+							variant='body1'
+							sx={{ textDecoration: "underline", display: "inline" }}>
 							{localStorage.getItem("record")}
-						</p>
-						, try improve it.
-					</p>
+						</Typography>
+						, try to improve it.
+					</Typography>
 				))}
 			{tenzies && !record && (
-				<h3 className='records'>
+				<Typography
+					variant='h6'
+					sx={{ m: 2, color: "#4a4e74", textAlign: "center" }}>
 					Congragulations, you finished the game after {count} rolls
-				</h3>
+				</Typography>
 			)}
 			{tenzies && record && (
-				<p className='records'>
+				<Typography
+					variant='h6'
+					sx={{ m: 2, color: "#4a4e74", textAlign: "center" }}>
 					Congragulations, you broke the record by finishing the game after{" "}
-					<p className='record-num'>{count}</p> rolls
-				</p>
+					<Typography
+						variant='h6'
+						sx={{
+							display: "inline",
+							textDecoration: "underline",
+							color: "darkseagreen",
+						}}>
+						{count}
+					</Typography>{" "}
+					rolls
+				</Typography>
 			)}
-		</div>
+		</Container>
 	)
 }
 

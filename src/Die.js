@@ -1,11 +1,17 @@
+import { Typography, Container } from "@mui/material"
+
 function Die(props) {
 	return (
-		<div
+		<Container
 			className='die'
-			style={{ backgroundColor: props.isHeld ? "#59E391" : "" }}
+			sx={{
+				backgroundColor: props.isHeld ? "#59E391" : "",
+			}}
 			onClick={props.holdDice}>
-			<h2 className='die-num'>{props.value}</h2>
-		</div>
+			<Typography variant='h5' sx={{ fontFamily: "Helvetica", fontSize: 30 }}>
+				{props.value}
+			</Typography>
+		</Container>
 	)
 }
 
