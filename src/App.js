@@ -81,12 +81,16 @@ function App() {
 				backgroundColor: "#f5f5f5",
 				display: "flex",
 				flexDirection: "column",
-				justifyContent: "space-around",
+				justifyContent: "center",
 				alignItems: "center",
 			}}>
 			{tenzies && <Confetti />}
 			<Typography variant='h3'>Tenzies</Typography>
-			<Typography variant='body1'>
+			<Typography
+				variant='body1'
+				sx={{
+					textAlign: "center",
+				}}>
 				Roll until all dice are the same. Click each die to freeze it at its
 				current value between rolls.
 			</Typography>
