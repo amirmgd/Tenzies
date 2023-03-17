@@ -76,9 +76,8 @@ function App() {
 	return (
 		<Container
 			className='main'
+			maxWidth='sm'
 			sx={{
-				width: "85%",
-				maxWidth: "50rem",
 				backgroundColor: "#f5f5f5",
 				display: "flex",
 				flexDirection: "column",
