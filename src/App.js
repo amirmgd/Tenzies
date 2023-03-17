@@ -76,8 +76,9 @@ function App() {
 	return (
 		<Container
 			className='main'
-			maxWidth='sm'
 			sx={{
+				width: "85%",
+				maxWidth: "50rem",
 				backgroundColor: "#f5f5f5",
 				display: "flex",
 				flexDirection: "column",
@@ -114,7 +115,7 @@ function App() {
 				) : (
 					<Typography
 						variant='body1'
-						sx={{ m: 2, fontSize: "1.1em" }}
+						sx={{ m: 1, fontSize: "1.1em" }}
 						component='span'>
 						the current record is {""}
 						{localStorage.getItem("record")}, try to improve it.
