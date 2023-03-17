@@ -78,7 +78,7 @@ function App() {
 			className='main'
 			sx={{
 				width: 500,
-				maxHeight: 800,
+				maxHeight: "100vh",
 				backgroundColor: "#f5f5f5",
 				display: "flex",
 				flexDirection: "column",
