@@ -78,8 +78,7 @@ function App() {
 			className='main'
 			sx={{
 				width: 500,
-				height: unset,
-				aspectRatio: 1 / 1,
+				height: "45vh",
 				backgroundColor: "#f5f5f5",
 				display: "flex",
 				flexDirection: "column",
