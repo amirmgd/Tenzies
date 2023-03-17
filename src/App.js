@@ -90,7 +90,7 @@ function App() {
 				variant='body1'
 				sx={{
 					textAlign: "center",
-					fontSize: "1.4em",
+					fontSize: "1.2em",
 				}}
 				component='span'>
 				Roll until all dice are the same. Click each die to freeze it at its
