@@ -90,7 +90,9 @@ function App() {
 				variant='body1'
 				sx={{
 					textAlign: "center",
-				}}>
+					fontSize: "1.4em",
+				}}
+				component='span'>
 				Roll until all dice are the same. Click each die to freeze it at its
 				current value between rolls.
 			</Typography>
@@ -100,44 +102,46 @@ function App() {
 			<Button
 				sx={{ boxShadow: 3, letterSpacing: 2 }}
 				variant='contained'
+				color='secondary'
 				onClick={rollDice}>
 				{tenzies ? "New Game" : "Roll"}
 			</Button>
 			{!tenzies &&
 				(localStorage.getItem("record") === null ? (
-					<Typography variant='body1' sx={{ m: 1 }}>
+					<Typography variant='body1' sx={{ m: 1 }} component='span'>
 						You're playing the game for the first time, Have fun.
 					</Typography>
 				) : (
-					<Typography variant='body1' sx={{ m: 2 }}>
+					<Typography
+						variant='body1'
+						sx={{ m: 2, fontSize: "1.1em" }}
+						component='span'>
 						the current record is {""}
-						<Typography
-							variant='body1'
-							sx={{ textDecoration: "underline", display: "inline" }}>
-							{localStorage.getItem("record")}
-						</Typography>
-						, try to improve it.
+						{localStorage.getItem("record")}, try to improve it.
 					</Typography>
 				))}
 			{tenzies && !record && (
 				<Typography
 					variant='h6'
-					sx={{ m: 2, color: "#4a4e74", textAlign: "center" }}>
+					sx={{ m: 2, color: "#4a4e74", textAlign: "center" }}
+					component='span'>
 					Congragulations, you finished the game after {count} rolls
 				</Typography>
 			)}
 			{tenzies && record && (
 				<Typography
 					variant='h6'
-					sx={{ m: 2, color: "#4a4e74", textAlign: "center" }}>
+					sx={{ m: 2, color: "#4a4e74", textAlign: "center" }}
+					component='span'>
 					Congragulations, you broke the record by finishing the game after{" "}
 					<Typography
-						variant='h6'
+						variant='h5'
 						sx={{
 							display: "inline",
 							textDecoration: "underline",
-							color: "darkseagreen",
-						}}>
+							color: "#59E391",
+						}}
+						component='span'>
 						{count}
 					</Typography>{" "}
 					rolls
